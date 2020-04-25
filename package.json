@@ -1,0 +1,36 @@
+{
+  "name": "anime-list-api",
+  "version": "1.0.0",
+  "description": "Projecto con el uso de la api de myanimelist y jikan",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walle214/anime-list-api.git"
+  },
+  "keywords": [
+    "mern",
+    "ts",
+    "typescript"
+  ],
+  "author": "Ulises Rafael Ramirez Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/walle214/anime-list-api/issues"
+  },
+  "homepage": "https://github.com/walle214/anime-list-api#readme",
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.6",
+    "@types/jsonwebtoken": "^8.3.9",
+    "@types/mongoose": "^5.7.13",
+    "@types/morgan": "^1.9.0",
+    "@types/node": "^13.13.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.10",
+    "morgan": "^1.10.0",
+    "typegoose": "^5.9.1"
+  }
+}
