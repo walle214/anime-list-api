@@ -1,17 +1,17 @@
 import express from 'express';
 import morgan from 'morgan';
+import authRouter from './routes/auth';
 
 const app = express();
 
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
-app.get('/', (req, res) => {
-  console.log(req.headers);
-  const { authorization } = req.headers;
-  if (authorization) res.send({ authorization: authorization.split(' ')[1] });
-  else res.send({ error: 'No auth header' });
+app.use('/', (req, res) => {
+  res.status(200).json({
+    message: 'Welcome',
+  });
 });
+app.use('/auth', authRouter);
 
 export default app;

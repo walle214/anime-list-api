@@ -3,16 +3,13 @@ dotenv.config();
 
 import app from './server';
 import './db';
-import User from './models/User';
 
-const { PORT } = process.env;
-const main = async () => {
+const { PORT = 5000 } = process.env;
+const main = () => {
   try {
-    await app.listen(PORT);
-    console.log(`Server on port ${PORT}`);
+    app.listen(PORT);
   } catch (error) {
     console.log(error);
-    process.exit();
   }
 };
 main();
