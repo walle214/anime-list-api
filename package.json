@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Projecto con el uso de la api de myanimelist y jikan",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "nodemon build/",
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/walle214/anime-list-api.git"
@@ -34,6 +38,7 @@
     "typegoose": "^5.9.1"
   },
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "nodemon": "^2.0.3"
   }
 }
