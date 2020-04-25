@@ -3,6 +3,7 @@ dotenv.config();
 
 import app from './server';
 import './db';
+import User from './models/User';
 
 const { PORT } = process.env;
 const main = async () => {
