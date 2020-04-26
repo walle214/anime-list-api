@@ -4,10 +4,9 @@
   "description": "Projecto con el uso de la api de myanimelist y jikan",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon build",
+    "start": "node build",
     "build": "tsc",
-    "dev": "tsc --watch",
-    "run": "concurrently \"npm:dev\" \"npm:start\""
+    "dev": "concurrently \"tsc -w\" \"nodemon build\""
   },
   "repository": {
     "type": "git",

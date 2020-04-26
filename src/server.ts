@@ -7,11 +7,11 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use('/auth', authRouter);
 app.use('/', (req, res) => {
   res.status(200).json({
     message: 'Welcome',
   });
 });
-app.use('/auth', authRouter);
 
 export default app;

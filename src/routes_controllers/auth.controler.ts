@@ -1,22 +1,19 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
 
-export const signup = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const signup = async (req: Request, res: Response) => {
   const { user, password } = req.body;
+  console.log({ user, password });
   if (!(user && password)) {
     res.status(400).json({
       message: 'User and password are required',
     });
-    return next();
+  } else {
+    res.status(200).json({
+      message: 'SignUp',
+    });
   }
-  res.status(200).json({
-    message: 'SignUp',
-  });
 };
-export const login = (req: Request, res: Response, next: NextFunction) => {
+export const login = (req: Request, res: Response) => {
   res.status(200).json({
     message: 'Login',
   });

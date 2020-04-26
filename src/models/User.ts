@@ -20,6 +20,7 @@ const usernamePropsOptions: PropOptionsWithStringValidate = {
     message: 'Username format not valid',
   },
 };
+
 const passwordPropsOptopns: PropOptionsWithStringValidate = {
   required: true,
   maxlength: 30,
@@ -35,6 +36,7 @@ const passwordPropsOptopns: PropOptionsWithStringValidate = {
     message: 'La contraseña no es bastante segura',
   },
 };
+
 @pre<User>('save', async function () {
   this.password = await cryptPassword(this.password);
 })
@@ -44,5 +46,6 @@ class User {
   @prop(passwordPropsOptopns)
   public password!: string;
 }
+
 const UserModel = getModelForClass(User);
 export default UserModel;
