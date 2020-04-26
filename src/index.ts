@@ -4,14 +4,15 @@ dotenv.config();
 import app from './server';
 import './db';
 
-const { PORT = 5000 } = process.env;
-const main = () => {
+const { PORT } = process.env;
+
+const main = (port: string | number) => {
   try {
-    app.listen(PORT);
-    console.log(`Server on port ${PORT}`);
+    app.listen(port);
+    console.log(`Server on port ${port}`);
   } catch (error) {
     console.log(error);
     process.exit();
   }
 };
-main();
+main(PORT || 3200);
