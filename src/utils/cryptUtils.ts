@@ -8,3 +8,10 @@ export const cryptPassword = async (password: string): Promise<string> => {
     process.exit();
   }
 };
+
+export const verifyPassword = async (
+  cryptedPassword: string,
+  password: string
+): Promise<boolean> => {
+  return await bcrypt.compare(password, cryptedPassword);
+};

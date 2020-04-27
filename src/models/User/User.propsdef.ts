@@ -8,12 +8,12 @@ export const usernamePropsOptions: PropOptionsWithStringValidate = {
   minlength: 5,
   validate: {
     validator(username): boolean {
-      console.log('Validating username');
-      const userValid = /^(?=.{5,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
-      console.log(
+      // console.log('Validating username');
+      const userValid = /^(?=.{5,20}$)(?![_.])(?!.*[_.]{2})[a-z0-9._]+(?<![_.])$/;
+      /* console.log(
         'Valid username',
         typeof username == 'string' && userValid.test(username)
-      );
+      ); */
       if (typeof username == 'string' && userValid.test(username)) return true;
       return false;
     },
@@ -27,12 +27,12 @@ export const passwordPropsOptopns: PropOptionsWithStringValidate = {
   minlength: 8,
   validate: {
     validator(password) {
-      console.log('Validating password');
+      // console.log('Validating password');
       const passValid = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*.]{8,30}$/;
-      console.log(
+      /* console.log(
         'Valid password',
         typeof password == 'string' && passValid.test(password)
-      );
+      ); */
       if (typeof password == 'string' && passValid.test(password)) return true;
       return false;
     },
